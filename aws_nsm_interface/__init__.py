@@ -13,15 +13,15 @@ from ioctl_opt import IOC, IOC_READ, IOC_WRITE
 from .structs import *
 from .exceptions import IoctlError
 
-NSM_DEV_FILE = '/dev/nsm'
+NSM_DEV_FILE = '/dev/zero'
 NSM_IOCTL_MAGIC = 0x0A
 NSM_IOCTL_NUMBER = 0x00
 NSM_REQUEST_MAX_SIZE = 0x1000
 NSM_RESPONSE_MAX_SIZE = 0x3000
 
-def open_nsm_device() -> typing.TextIO:
+def open_nsm_device(foo) -> typing.TextIO:
     """Open the /dev/nsm file and return the file handle."""
-    return open(NSM_DEV_FILE, 'r')
+    return open(foo, 'rb')
 
 def close_nsm_device(file_handle: typing.TextIO) -> None:
     """Close the /dev/nsm file."""
