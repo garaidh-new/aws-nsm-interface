@@ -1,6 +1,6 @@
 import aws_nsm_interface
 
-handle = aws_nsm_interface.open_nsm_device('/dev/zero')
+handle = aws_nsm_interface.open_nsm_device('/dev/nsm')
 
 buff_length = 8
 
